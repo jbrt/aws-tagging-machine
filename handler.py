@@ -14,6 +14,12 @@ def auto_tagging(event, context):
     :param context: (dict) context of the Lambda function
     :return: (dict) result of the tagging operation
     """
+
+    # With Lambda all stdout messages will be logged to CloudWatch Log.
+    # Use a logger here is useless ;)
+    print('Begin tagging operation')
+    print(event)
+
     try:
         # First, let's analyse this event and extract ARN & tag information
         event_handler = EventFactory(event)
@@ -22,9 +28,10 @@ def auto_tagging(event, context):
         client = boto3.client('resourcegroupstaggingapi')
         response = client.tag_resources(ResourceARNList=event_handler.arn,
                                         Tags=event_handler.tags)
-        return response
 
     except EventError as error:
-        # With Lambda all stdout messages will be logged to CloudWatch Log.
-        # Use a logger here is useless ;)
         print(error)
+
+    else:
+        print(f'Successfully tag the resource: {event_handler}')
+        return response

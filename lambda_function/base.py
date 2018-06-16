@@ -62,7 +62,7 @@ class BaseEvent(object, metaclass=abc.ABCMeta):
         :return: (dict) Tags
         """
         self._tags[self._event_type+'By'] = self._event['detail']['userIdentity']['arn']
-        self._tags[self._event_type+'At'] = self._event['time']
+        self._tags[self._event_type+'AtUTC'] = self._event['time']
         self._tags[self._event_type+'From'] = self._event['detail']['sourceIPAddress']
         self._tags[self._event_type+'ID'] = self._event['detail']['eventID']
         return self._tags

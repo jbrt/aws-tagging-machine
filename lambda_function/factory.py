@@ -16,6 +16,7 @@ class EventFactory(object):
     def __new__(cls, event: dict):
 
         cls._events = {'CreateInternetGateway': EC2CreateInternetGateway,
+                       'CreateRouteTable': EC2CreateRouteTable,
                        'CreateSnapshot': EC2CreateSnapshot,
                        'CreateSubnet': EC2CreateSubnet,
                        'CreateTable': DynamoDBCreateTable,

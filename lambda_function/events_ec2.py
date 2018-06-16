@@ -1,6 +1,10 @@
 # coding: utf-8
 
-""" Event parsing for EC2 """
+"""
+Event parsing for EC2
+Each class describe a specific EC2 event with it's own data and finally
+build an ARN or a list of ARNs.
+"""
 
 
 from lambda_function.base import CreateEvent, UpdateEvent
@@ -10,11 +14,24 @@ class EC2CreateInternetGateway(CreateEvent):
     def __init__(self, event: dict):
         super(EC2CreateInternetGateway, self).__init__(event)
         self._arn_parts['service'] = 'ec2'
+        self._arn_parts['resourcetype'] = 'internet-gateway'
         self._arn_parts['resource'] = event['detail']\
                                            ['responseElements']\
                                            ['internetGateway']\
                                            ['internetGatewayId']
-        self._arn.append(self._arn_templates['t1'].format(**self._arn_parts))
+        self._arn.append(self._arn_templates['t2'].format(**self._arn_parts))
+
+
+class EC2CreateRouteTable(CreateEvent):
+    def __init__(self, event: dict):
+        super(EC2CreateRouteTable, self).__init__(event)
+        self._arn_parts['service'] = 'ec2'
+        self._arn_parts['resourcetype'] = 'route-table'
+        self._arn_parts['resource'] = event['detail']\
+                                           ['responseElements']\
+                                           ['routeTable']\
+                                           ['routeTableId']
+        self._arn.append(self._arn_templates['t2'].format(**self._arn_parts))
 
 
 class EC2CreateSnapshot(CreateEvent):
@@ -25,7 +42,7 @@ class EC2CreateSnapshot(CreateEvent):
         self._arn_parts['resource'] = event['detail']\
                                            ['responseElements']\
                                            ['snapshotId']
-        self._arn.append(self._arn_templates['t4'].format(**self._arn_parts))
+        self._arn.append(self._arn_templates['t2'].format(**self._arn_parts))
 
 
 class EC2CreateSubnet(CreateEvent):
@@ -44,10 +61,11 @@ class EC2CreateVolume(CreateEvent):
     def __init__(self, event: dict):
         super(EC2CreateVolume, self).__init__(event)
         self._arn_parts['service'] = 'ec2'
+        self._arn_parts['resourcetype'] = 'volume'
         self._arn_parts['resource'] = event['detail']\
                                            ['responseElements']\
                                            ['volumeId']
-        self._arn.append(self._arn_templates['t1'].format(**self._arn_parts))
+        self._arn.append(self._arn_templates['t2'].format(**self._arn_parts))
 
 
 class EC2RunInstances(CreateEvent):
