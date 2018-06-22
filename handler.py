@@ -17,8 +17,7 @@ def auto_tagging(event, context):
 
     # With Lambda all stdout messages will be logged to CloudWatch Log.
     # Use a logger here is useless ;)
-    print('Begin tagging operation')
-    print(event)
+    print(f'Begin tagging operation with: {event}')
 
     try:
         # First, let's analyse this event and extract ARN & tag information
@@ -34,4 +33,5 @@ def auto_tagging(event, context):
 
     else:
         print(f'Successfully tag the resource: {event_handler}')
+        print(f'Tags applied: {event_handler.tags}')
         return response

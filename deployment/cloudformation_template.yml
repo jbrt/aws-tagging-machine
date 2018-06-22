@@ -1,0 +1,76 @@
+Resources:
+  AutoTaggingMachine:
+    Properties:
+      AssumeRolePolicyDocument:
+        Statement:
+          - Action:
+              - sts:AssumeRole
+            Effect: Allow
+            Principal:
+              Service:
+                - lambda.amazonaws.com
+        Version: '2012-10-17'
+      Policies:
+        - PolicyDocument:
+            Statement:
+              - Action:
+                  - logs:CreateLogGroup
+                  - logs:CreateLogStream
+                  - logs:PutLogEvents
+                Effect: Allow
+                Resource: arn:aws:logs:*:*:*
+              - Action: tag:TagResources
+                Effect: Allow
+                Resource: '*'
+              - Action: ec2:CreateTags
+                Effect: Allow
+                Resource: '*'
+              - Action: dynamodb:TagResource
+                Effect: Allow
+                Resource: '*'
+            Version: '2012-10-17'
+          PolicyName: AllowTaggingAndLogging
+    Type: AWS::IAM::Role
+  AutoTaggingMachineFunction:
+    Properties:
+      Code:
+        S3Bucket: YOUR_BUCKET_NAME_HERE
+        S3Key: code.zip
+      Handler: handler.auto_tagging
+      Role: !GetAtt 'AutoTaggingMachine.Arn'
+      Runtime: python3.6
+      Timeout: 60
+    Type: AWS::Lambda::Function
+  AutoTaggingMachineRule:
+    Properties:
+      Description: Foobar CloudWatch Event
+      EventPattern:
+        detail:
+          eventName:
+            - RunInstances
+            - CreateRouteTable
+            - CreateSnapshot
+            - CreateSubnet
+            - CreateTable
+            - CreateVolume
+            - CreateInternetGateway
+          eventSource:
+            - ec2.amazonaws.com
+            - dynamodb.amazonaws.com
+        detail-type:
+          - AWS API Call via CloudTrail
+        source:
+          - aws.ec2
+          - aws.dynamodb
+      State: ENABLED
+      Targets:
+        - Arn: !GetAtt 'AutoTaggingMachineFunction.Arn'
+          Id: FooBarFunction1
+    Type: AWS::Events::Rule
+  AutoTaggingMachineInvokePermission:
+    Properties:
+      Action: lambda:InvokeFunction
+      FunctionName: !GetAtt 'AutoTaggingMachineFunction.Arn'
+      Principal: events.amazonaws.com
+      SourceArn: !GetAtt 'AutoTaggingMachineRule.Arn'
+    Type: AWS::Lambda::Permission
