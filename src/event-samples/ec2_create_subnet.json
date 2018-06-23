@@ -1,0 +1,56 @@
+{
+    "version": "0",
+    "id": "c01daa60-0be8-0bf5-d04b-bfb5c24bf639",
+    "detail-type": "AWS API Call via CloudTrail",
+    "source": "aws.ec2",
+    "account": "715544332222",
+    "time": "2018-06-13T08:16:07Z",
+    "region": "eu-west-1",
+    "resources": [],
+    "detail": {
+        "eventVersion": "1.05",
+        "userIdentity": {
+            "type": "IAMUser",
+            "principalId": "AIDAIMIPIFM25KTRLIQCU",
+            "arn": "arn:aws:iam::715544332222:user/jbrt",
+            "accountId": "715544332222",
+            "accessKeyId": "ASIAI3ARVW6TEX3WRIIQ",
+            "userName": "jbrt",
+            "sessionContext": {
+                "attributes": {
+                    "mfaAuthenticated": "true",
+                    "creationDate": "2018-06-13T06:50:02Z"
+                }
+            },
+            "invokedBy": "signin.amazonaws.com"
+        },
+        "eventTime": "2018-06-13T08:16:07Z",
+        "eventSource": "ec2.amazonaws.com",
+        "eventName": "CreateSubnet",
+        "awsRegion": "eu-west-1",
+        "sourceIPAddress": "109.190.109.190",
+        "userAgent": "signin.amazonaws.com",
+        "requestParameters": {
+            "vpcId": "vpc-f9a8359e",
+            "cidrBlock": "172.16.5.0/24",
+            "availabilityZone": "eu-west-1a"
+        },
+        "responseElements": {
+            "subnet": {
+                "subnetId": "subnet-8c3dc5d6",
+                "state": "pending",
+                "vpcId": "vpc-f9a8359e",
+                "cidrBlock": "172.16.5.0/24",
+                "ipv6CidrBlockAssociationSet": {},
+                "availableIpAddressCount": 251,
+                "availabilityZone": "eu-west-1a",
+                "defaultForAz": false,
+                "mapPublicIpOnLaunch": false,
+                "assignIpv6AddressOnCreation": false
+            }
+        },
+        "requestID": "2b184626-a3df-4e42-9b69-824bd174ae34",
+        "eventID": "086750ca-6c63-48aa-94f5-eca6504d0939",
+        "eventType": "AwsApiCall"
+    }
+}

@@ -1,0 +1,45 @@
+{
+    "version": "0",
+    "id": "9e51f517-3c1f-2b74-f144-f47802a83c50",
+    "detail-type": "AWS API Call via CloudTrail",
+    "source": "aws.ec2",
+    "account": "715544332222",
+    "time": "2018-06-11T11:10:25Z",
+    "region": "eu-west-1",
+    "resources": [],
+    "detail": {
+        "eventVersion": "1.05",
+        "userIdentity": {
+            "type": "IAMUser",
+            "principalId": "AIDAIMIPIFM25KTRLIQCU",
+            "arn": "arn:aws:iam::715544332222:user/jbrt",
+            "accountId": "715544332222",
+            "accessKeyId": "ASIAJAVDSH2FSZVUDPIQ",
+            "userName": "jbrt",
+            "sessionContext": {
+                "attributes": {
+                    "mfaAuthenticated": "true",
+                    "creationDate": "2018-06-11T10:38:39Z"
+                }
+            },
+            "invokedBy": "signin.amazonaws.com"
+        },
+        "eventTime": "2018-06-11T11:10:25Z",
+        "eventSource": "ec2.amazonaws.com",
+        "eventName": "CreateInternetGateway",
+        "awsRegion": "eu-west-1",
+        "sourceIPAddress": "109.190.109.190",
+        "userAgent": "signin.amazonaws.com",
+        "requestParameters": null,
+        "responseElements": {
+            "internetGateway": {
+                "internetGatewayId": "igw-50e0a737",
+                "attachmentSet": {},
+                "tagSet": {}
+            }
+        },
+        "requestID": "4bbc5a3c-4555-49b1-85e7-92b1da9d2de2",
+        "eventID": "ae3d6e24-de53-4f0c-b043-f6c115d6922c",
+        "eventType": "AwsApiCall"
+    }
+}

@@ -1,0 +1,85 @@
+{
+    "version": "0",
+    "id": "d5d9cf5e-c06e-749c-3a7a-807518cb79ac",
+    "detail-type": "AWS API Call via CloudTrail",
+    "source": "aws.dynamodb",
+    "account": "715544332222",
+    "time": "2018-06-09T13:37:57Z",
+    "region": "eu-west-1",
+    "resources": [],
+    "detail": {
+        "eventVersion": "1.05",
+        "userIdentity": {
+            "type": "IAMUser",
+            "principalId": "AIDAIMIPIFM25KTRLIQCU",
+            "arn": "arn:aws:iam::715544332222:user/jbrt",
+            "accountId": "715544332222",
+            "accessKeyId": "ASIAJNDDHDQCM5QIJU5K",
+            "userName": "jbrt",
+            "sessionContext": {
+                "attributes": {
+                    "mfaAuthenticated": "true",
+                    "creationDate": "2018-06-09T13:03:09Z"
+                }
+            },
+            "invokedBy": "signin.amazonaws.com"
+        },
+        "eventTime": "2018-06-09T13:37:57Z",
+        "eventSource": "dynamodb.amazonaws.com",
+        "eventName": "CreateTable",
+        "awsRegion": "eu-west-1",
+        "sourceIPAddress": "89.89.89.89",
+        "userAgent": "signin.amazonaws.com",
+        "requestParameters": {
+            "keySchema": [
+                {
+                    "keyType": "HASH",
+                    "attributeName": "name"
+                }
+            ],
+            "tableName": "delta_table",
+            "attributeDefinitions": [
+                {
+                    "attributeType": "S",
+                    "attributeName": "name"
+                }
+            ],
+            "provisionedThroughput": {
+                "readCapacityUnits": 5,
+                "writeCapacityUnits": 5
+            }
+        },
+        "responseElements": {
+            "tableDescription": {
+                "tableId": "3d02aa6c-0b39-41a8-aeb1-acb43cfe0ae7",
+                "attributeDefinitions": [
+                    {
+                        "attributeType": "S",
+                        "attributeName": "name"
+                    }
+                ],
+                "provisionedThroughput": {
+                    "readCapacityUnits": 5,
+                    "writeCapacityUnits": 5,
+                    "numberOfDecreasesToday": 0
+                },
+                "tableName": "delta_table",
+                "tableSizeBytes": 0,
+                "tableStatus": "CREATING",
+                "keySchema": [
+                    {
+                        "keyType": "HASH",
+                        "attributeName": "name"
+                    }
+                ],
+                "tableArn": "arn:aws:dynamodb:eu-west-1:715544332222:table/delta_table",
+                "itemCount": 0,
+                "creationDateTime": "Jun 9, 2018 1:37:57 PM"
+            }
+        },
+        "requestID": "H1Q475FOQ85VOAC95O91PF9DBVVV4KQNSO5AEMVJF66Q9ASUAAJG",
+        "eventID": "bde9a448-51ac-4787-a361-9cbe27fc1b23",
+        "eventType": "AwsApiCall",
+        "apiVersion": "2012-08-10"
+    }
+}

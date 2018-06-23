@@ -1,0 +1,233 @@
+{
+    "version": "0",
+    "id": "994848f2-e07c-db39-7b2c-349a763e4b9c",
+    "detail-type": "AWS API Call via CloudTrail",
+    "source": "aws.ec2",
+    "account": "715544332222",
+    "time": "2018-06-09T14:05:53Z",
+    "region": "eu-west-1",
+    "resources": [],
+    "detail": {
+        "eventVersion": "1.05",
+        "userIdentity": {
+            "type": "IAMUser",
+            "principalId": "AIDAIMIPIFM25KTRLIQCU",
+            "arn": "arn:aws:iam::715544332222:user/jbrt",
+            "accountId": "715544332222",
+            "accessKeyId": "ASIAIBSRXUZL77UVM6MA",
+            "userName": "jbrt",
+            "sessionContext": {
+                "attributes": {
+                    "mfaAuthenticated": "true",
+                    "creationDate": "2018-06-09T13:03:09Z"
+                }
+            },
+            "invokedBy": "signin.amazonaws.com"
+        },
+        "eventTime": "2018-06-09T14:05:53Z",
+        "eventSource": "ec2.amazonaws.com",
+        "eventName": "RunInstances",
+        "awsRegion": "eu-west-1",
+        "sourceIPAddress": "89.89.89.89",
+        "userAgent": "signin.amazonaws.com",
+        "requestParameters": {
+            "instancesSet": {
+                "items": [
+                    {
+                        "imageId": "ami-d7b9a2b1",
+                        "minCount": 1,
+                        "maxCount": 1,
+                        "keyName": "MonAccessFreeTier"
+                    }
+                ]
+            },
+            "instanceType": "t2.micro",
+            "blockDeviceMapping": {
+                "items": [
+                    {
+                        "deviceName": "/dev/xvda",
+                        "ebs": {
+                            "volumeSize": 8,
+                            "deleteOnTermination": true,
+                            "volumeType": "gp2"
+                        }
+                    }
+                ]
+            },
+            "availabilityZone": "eu-west-1c",
+            "tenancy": "default",
+            "monitoring": {
+                "enabled": false
+            },
+            "disableApiTermination": false,
+            "networkInterfaceSet": {
+                "items": [
+                    {
+                        "deviceIndex": 0,
+                        "subnetId": "subnet-14813d5d",
+                        "description": "Primary network interface",
+                        "deleteOnTermination": true,
+                        "associatePublicIpAddress": false,
+                        "groupSet": {
+                            "items": [
+                                {
+                                    "groupId": "sg-ba76d9c2"
+                                }
+                            ]
+                        },
+                        "ipv6AddressCount": 0
+                    }
+                ]
+            },
+            "iamInstanceProfile": {
+                "arn": "arn:aws:iam::715544332222:instance-profile/EC2_AccesSSM"
+            },
+            "ebsOptimized": false,
+            "tagSpecificationSet": {
+                "items": [
+                    {
+                        "resourceType": "instance",
+                        "tags": [
+                            {
+                                "key": "Project",
+                                "value": "ApertureScience"
+                            },
+                            {
+                                "key": "AWSServiceAccount"
+                            },
+                            {
+                                "key": "Name",
+                                "value": "CommandHost"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "creditSpecification": {
+                "cpuCredits": "standard"
+            }
+        },
+        "responseElements": {
+            "requestId": "3d736cd8-fee3-4a0c-9405-7116e2e6a015",
+            "reservationId": "r-0293115c0b929aa07",
+            "ownerId": "715544332222",
+            "groupSet": {},
+            "instancesSet": {
+                "items": [
+                    {
+                        "instanceId": "i-0e09147c073cdabf2",
+                        "imageId": "ami-d7b9a2b1",
+                        "instanceState": {
+                            "code": 0,
+                            "name": "pending"
+                        },
+                        "privateDnsName": "ip-10-0-0-82.eu-west-1.compute.internal",
+                        "keyName": "MonAccessFreeTier",
+                        "amiLaunchIndex": 0,
+                        "productCodes": {},
+                        "instanceType": "t2.micro",
+                        "launchTime": 1528553153000,
+                        "placement": {
+                            "availabilityZone": "eu-west-1c",
+                            "tenancy": "default"
+                        },
+                        "monitoring": {
+                            "state": "disabled"
+                        },
+                        "subnetId": "subnet-14813d5d",
+                        "vpcId": "vpc-822795e5",
+                        "privateIpAddress": "10.0.0.82",
+                        "stateReason": {
+                            "code": "pending",
+                            "message": "pending"
+                        },
+                        "architecture": "x86_64",
+                        "rootDeviceType": "ebs",
+                        "rootDeviceName": "/dev/xvda",
+                        "blockDeviceMapping": {},
+                        "virtualizationType": "hvm",
+                        "hypervisor": "xen",
+                        "tagSet": {
+                            "items": [
+                                {
+                                    "key": "Name",
+                                    "value": "CommandHost"
+                                },
+                                {
+                                    "key": "AWSServiceAccount"
+                                },
+                                {
+                                    "key": "Project",
+                                    "value": "ApertureScience"
+                                }
+                            ]
+                        },
+                        "groupSet": {
+                            "items": [
+                                {
+                                    "groupId": "sg-ba76d9c2",
+                                    "groupName": "SG_CommandHost"
+                                }
+                            ]
+                        },
+                        "sourceDestCheck": true,
+                        "networkInterfaceSet": {
+                            "items": [
+                                {
+                                    "networkInterfaceId": "eni-62ea1456",
+                                    "subnetId": "subnet-14813d5d",
+                                    "vpcId": "vpc-822795e5",
+                                    "description": "Primary network interface",
+                                    "ownerId": "715544332222",
+                                    "status": "in-use",
+                                    "macAddress": "06:d0:2f:12:06:00",
+                                    "privateIpAddress": "10.0.0.82",
+                                    "privateDnsName": "ip-10-0-0-82.eu-west-1.compute.internal",
+                                    "sourceDestCheck": true,
+                                    "groupSet": {
+                                        "items": [
+                                            {
+                                                "groupId": "sg-ba76d9c2",
+                                                "groupName": "SG_CommandHost"
+                                            }
+                                        ]
+                                    },
+                                    "attachment": {
+                                        "attachmentId": "eni-attach-3d4db040",
+                                        "deviceIndex": 0,
+                                        "status": "attaching",
+                                        "attachTime": 1528553153000,
+                                        "deleteOnTermination": true
+                                    },
+                                    "privateIpAddressesSet": {
+                                        "item": [
+                                            {
+                                                "privateIpAddress": "10.0.0.82",
+                                                "privateDnsName": "ip-10-0-0-82.eu-west-1.compute.internal",
+                                                "primary": true
+                                            }
+                                        ]
+                                    },
+                                    "ipv6AddressesSet": {},
+                                    "tagSet": {}
+                                }
+                            ]
+                        },
+                        "iamInstanceProfile": {
+                            "arn": "arn:aws:iam::715544332222:instance-profile/EC2_AccesSSM",
+                            "id": "AIPAIFE5W4XC5F3MMFCJC"
+                        },
+                        "ebsOptimized": false,
+                        "cpuOptions": {
+                            "coreCount": 1,
+                            "threadsPerCore": 1
+                        }
+                    }
+                ]
+            }
+        },
+        "requestID": "3d736cd8-fee3-4a0c-9405-7116e2e6a015",
+        "eventID": "4b9bf824-8dc1-495c-afe2-98394b473fb0",
+        "eventType": "AwsApiCall"
+    }
+}
