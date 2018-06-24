@@ -21,10 +21,12 @@ Here is an example of applied tags on a resource:
 Current event supported:
 
 - (EC2) RunInstances
+- (EC2) CreateDhcpOptions
 - (EC2) CreateRouteTable
 - (EC2) CreateSnapshot
 - (EC2) CreateSubnet
 - (EC2) CreateVolume
+- (EC2) CreateVpc
 - (EC2) CreateInternetGateway
 - (DynamoDB) CreateTable
 
@@ -63,6 +65,16 @@ The development is still ongoing. The next releases will add:
 
 Pull requests are welcome.
 
+How to add support of new events into the code ?
+------------------------------------------------
+
+To add the support of new events into the code, you have to do 5 things:
+
+1. Add the parsing of the new event in the right Python module (ex: events_ec2.py)
+2. Add the support of this new event in the factory module (factory.py)
+3. Update the CloudFormation template by adding this event in the CloudWatch Rule
+4. Write some unittests and put them into the file unittest-lambda.py (and add a sample in the directory event-samples)
+5. Update this page if needed :-)
 
 License
 -------
