@@ -48,11 +48,13 @@ Resources:
         detail:
           eventName:
             - RunInstances
+            - CreateDhcpOptions
             - CreateRouteTable
             - CreateSnapshot
             - CreateSubnet
             - CreateTable
             - CreateVolume
+            - CreateVpc
             - CreateInternetGateway
           eventSource:
             - ec2.amazonaws.com

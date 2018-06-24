@@ -1,0 +1,72 @@
+{
+  "version": "0",
+  "id": "d9492c86-cb06-6ed4-6c58-ec3a22f70519",
+  "detail-type": "AWS API Call via CloudTrail",
+  "source": "aws.ec2",
+  "account": "715544332222",
+  "time": "2018-06-24T13:55:16Z",
+  "region": "eu-west-1",
+  "resources": [],
+  "detail": {
+    "eventVersion": "1.05",
+    "userIdentity": {
+      "type": "IAMUser",
+      "principalId": "AIDAIMIPIFM25KTRLIQCU",
+      "arn": "arn:aws:iam::715544332222:user/jbrt",
+      "accountId": "715544332222",
+      "accessKeyId": "ASIAIRXJYGBVETW6L3UA",
+      "userName": "jbrt",
+      "sessionContext": {
+        "attributes": {
+          "mfaAuthenticated": "true",
+          "creationDate": "2018-06-24T13:51:56Z"
+        }
+      },
+      "invokedBy": "signin.amazonaws.com"
+    },
+    "eventTime": "2018-06-24T13:55:16Z",
+    "eventSource": "ec2.amazonaws.com",
+    "eventName": "CreateDhcpOptions",
+    "awsRegion": "eu-west-1",
+    "sourceIPAddress": "89.89.89.89",
+    "userAgent": "signin.amazonaws.com",
+    "requestParameters": {
+      "dhcpConfigurationSet": {
+        "items": [
+          {
+            "key": "domain-name",
+            "valueSet": {
+              "items": [
+                {
+                  "value": "yolo.org"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "responseElements": {
+      "dhcpOptions": {
+        "dhcpOptionsId": "dopt-f6229190",
+        "dhcpConfigurationSet": {
+          "items": [
+            {
+              "key": "domain-name",
+              "valueSet": {
+                "items": [
+                  {
+                    "value": "yolo.org"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    },
+    "requestID": "a3880a84-1d54-4b3a-b22d-2106158b3af9",
+    "eventID": "9e3bf18e-fefc-4a5d-9b0e-719ca4c4972d",
+    "eventType": "AwsApiCall"
+  }
+}
