@@ -10,6 +10,18 @@ build an ARN or a list of ARNs.
 from lambda_function.base import CreateEvent, UpdateEvent
 
 
+class EC2CreateDhcpOptions(CreateEvent):
+    def __init__(self, event: dict):
+        super(EC2CreateDhcpOptions, self).__init__(event)
+        self._arn_parts['service'] = 'ec2'
+        self._arn_parts['resourcetype'] = 'dhcp-options'
+        self._arn_parts['resource'] = event['detail']\
+                                           ['responseElements']\
+                                           ['dhcpOptions']\
+                                           ['dhcpOptionsId']
+        self._arn.append(self._arn_templates['t2'].format(**self._arn_parts))
+
+
 class EC2CreateInternetGateway(CreateEvent):
     def __init__(self, event: dict):
         super(EC2CreateInternetGateway, self).__init__(event)
@@ -65,6 +77,18 @@ class EC2CreateVolume(CreateEvent):
         self._arn_parts['resource'] = event['detail']\
                                            ['responseElements']\
                                            ['volumeId']
+        self._arn.append(self._arn_templates['t2'].format(**self._arn_parts))
+
+
+class EC2CreateVpc(CreateEvent):
+    def __init__(self, event: dict):
+        super(EC2CreateVpc, self).__init__(event)
+        self._arn_parts['service'] = 'ec2'
+        self._arn_parts['resourcetype'] = 'vpc'
+        self._arn_parts['resource'] = event['detail']\
+                                           ['responseElements']\
+                                           ['vpc']\
+                                           ['vpcId']
         self._arn.append(self._arn_templates['t2'].format(**self._arn_parts))
 
 

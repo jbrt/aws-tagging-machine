@@ -1,0 +1,55 @@
+{
+    "version": "0",
+    "id": "a552b99e-61f2-6b14-a74c-e616acb1f559",
+    "detail-type": "AWS API Call via CloudTrail",
+    "source": "aws.ec2",
+    "account": "715544332222",
+    "time": "2018-06-10T12:34:35Z",
+    "region": "eu-west-1",
+    "resources": [],
+    "detail": {
+        "eventVersion": "1.05",
+        "userIdentity": {
+            "type": "IAMUser",
+            "principalId": "AIDAIMIPIFM25KTRLIQCU",
+            "arn": "arn:aws:iam::715544332222:user/jbrt",
+            "accountId": "715544332222",
+            "accessKeyId": "ASIAID3U7EABHGV7654A",
+            "userName": "jbrt",
+            "sessionContext": {
+                "attributes": {
+                    "mfaAuthenticated": "true",
+                    "creationDate": "2018-06-10T12:14:22Z"
+                }
+            },
+            "invokedBy": "signin.amazonaws.com"
+        },
+        "eventTime": "2018-06-10T12:34:35Z",
+        "eventSource": "ec2.amazonaws.com",
+        "eventName": "CreateVolume",
+        "awsRegion": "eu-west-1",
+        "sourceIPAddress": "89.89.89.89",
+        "userAgent": "signin.amazonaws.com",
+        "requestParameters": {
+            "size": "1",
+            "zone": "eu-west-1a",
+            "volumeType": "gp2",
+            "encrypted": false
+        },
+        "responseElements": {
+            "requestId": "79d9a278-10ed-4fd9-ba9f-3bcb70c5a08f",
+            "volumeId": "vol-0d3ce94e882c727fc",
+            "size": "1",
+            "zone": "eu-west-1a",
+            "status": "creating",
+            "createTime": 1528634075000,
+            "volumeType": "gp2",
+            "iops": 100,
+            "encrypted": false,
+            "tagSet": {}
+        },
+        "requestID": "79d9a278-10ed-4fd9-ba9f-3bcb70c5a08f",
+        "eventID": "30acbb07-c286-4308-b2da-68cb31ce03f7",
+        "eventType": "AwsApiCall"
+    }
+}

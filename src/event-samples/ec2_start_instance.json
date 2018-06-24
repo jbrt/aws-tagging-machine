@@ -1,0 +1,64 @@
+{
+    "version": "0",
+    "id": "cb7ae58e-4f8a-d544-c9f1-b3eac1ac4721",
+    "detail-type": "AWS API Call via CloudTrail",
+    "source": "aws.ec2",
+    "account": "715544332222",
+    "time": "2018-06-11T05:45:34Z",
+    "region": "eu-west-1",
+    "resources": [],
+    "detail": {
+        "eventVersion": "1.05",
+        "userIdentity": {
+            "type": "IAMUser",
+            "principalId": "AIDAIMIPIFM25KTRLIQCU",
+            "arn": "arn:aws:iam::715544332222:user/jbrt",
+            "accountId": "715544332222",
+            "accessKeyId": "ASIAILC7LDMJW3MNLNCA",
+            "userName": "jbrt",
+            "sessionContext": {
+                "attributes": {
+                    "mfaAuthenticated": "true",
+                    "creationDate": "2018-06-11T05:42:45Z"
+                }
+            },
+            "invokedBy": "signin.amazonaws.com"
+        },
+        "eventTime": "2018-06-11T05:45:34Z",
+        "eventSource": "ec2.amazonaws.com",
+        "eventName": "StartInstances",
+        "awsRegion": "eu-west-1",
+        "sourceIPAddress": "109.190.109.190",
+        "userAgent": "signin.amazonaws.com",
+        "requestParameters": {
+            "instancesSet": {
+                "items": [
+                    {
+                        "instanceId": "i-0923fd6599810253c"
+                    }
+                ]
+            }
+        },
+        "responseElements": {
+            "requestId": "5a49aa6d-496c-4ec7-a43d-511021a9b1e4",
+            "instancesSet": {
+                "items": [
+                    {
+                        "instanceId": "i-0923fd6599810253c",
+                        "currentState": {
+                            "code": 0,
+                            "name": "pending"
+                        },
+                        "previousState": {
+                            "code": 80,
+                            "name": "stopped"
+                        }
+                    }
+                ]
+            }
+        },
+        "requestID": "5a49aa6d-496c-4ec7-a43d-511021a9b1e4",
+        "eventID": "c9778570-61f2-4352-b2bd-231731d24bc4",
+        "eventType": "AwsApiCall"
+    }
+}
