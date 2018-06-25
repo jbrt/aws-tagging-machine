@@ -49,6 +49,7 @@ Resources:
           eventName:
             - RunInstances
             - CreateDhcpOptions
+            - CreateNetworkAcl
             - CreateRouteTable
             - CreateSnapshot
             - CreateSubnet

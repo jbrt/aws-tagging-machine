@@ -1,0 +1,67 @@
+{
+    "version": "0",
+    "id": "47cce0a6-3c6a-5962-3adb-5ac11301061b",
+    "detail-type": "AWS API Call via CloudTrail",
+    "source": "aws.ec2",
+    "account": "715544332222",
+    "time": "2018-06-25T05:32:18Z",
+    "region": "eu-west-1",
+    "resources": [],
+    "detail": {
+        "eventVersion": "1.05",
+        "userIdentity": {
+            "type": "IAMUser",
+            "principalId": "AIDAIMIPIFM25KTRLIQCU",
+            "arn": "arn:aws:iam::715544332222:user/jbrt",
+            "accountId": "715544332222",
+            "accessKeyId": "ASIAIP7S7JW5SUY54VPQ",
+            "userName": "jbrt",
+            "sessionContext": {
+                "attributes": {
+                    "mfaAuthenticated": "true",
+                    "creationDate": "2018-06-25T05:24:55Z"
+                }
+            },
+            "invokedBy": "signin.amazonaws.com"
+        },
+        "eventTime": "2018-06-25T05:32:18Z",
+        "eventSource": "ec2.amazonaws.com",
+        "eventName": "CreateNetworkAcl",
+        "awsRegion": "eu-west-1",
+        "sourceIPAddress": "109.190.109.190",
+        "userAgent": "signin.amazonaws.com",
+        "requestParameters": {
+            "vpcId": "vpc-f9a8359e"
+        },
+        "responseElements": {
+            "networkAcl": {
+                "networkAclId": "acl-21804558",
+                "vpcId": "vpc-f9a8359e",
+                "isDefault": false,
+                "entrySet": {
+                    "items": [
+                        {
+                            "ruleNumber": 32767,
+                            "aclProtocol": "-1",
+                            "ruleAction": "deny",
+                            "cidrBlock": "0.0.0.0/0",
+                            "egress": true
+                        },
+                        {
+                            "ruleNumber": 32767,
+                            "aclProtocol": "-1",
+                            "ruleAction": "deny",
+                            "cidrBlock": "0.0.0.0/0",
+                            "egress": false
+                        }
+                    ]
+                },
+                "associationSet": {},
+                "tagSet": {}
+            }
+        },
+        "requestID": "e7b63a1c-792f-4c70-97b8-2f76c3c5d449",
+        "eventID": "2b1489a8-d8bc-405f-8672-194ed13abcd8",
+        "eventType": "AwsApiCall"
+    }
+}
