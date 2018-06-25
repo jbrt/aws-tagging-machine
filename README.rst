@@ -14,9 +14,13 @@ process:
 3. The Rule trigger an Lambda function
 4. The function tags the resource depending on event source
 
+.. image:: images/template.png
+    :align: center
+
 Here is an example of applied tags on a resource:
 
 .. image:: images/example-tags.png
+    :align: center
 
 Current event supported:
 
