@@ -34,6 +34,18 @@ class EC2CreateInternetGateway(CreateEvent):
         self._arn.append(self._arn_templates['t2'].format(**self._arn_parts))
 
 
+class EC2CreateNetworkAcl(CreateEvent):
+    def __init__(self, event: dict):
+        super(EC2CreateNetworkAcl, self).__init__(event)
+        self._arn_parts['service'] = 'ec2'
+        self._arn_parts['resourcetype'] = 'network-acl'
+        self._arn_parts['resource'] = event['detail']\
+                                           ['responseElements']\
+                                           ['networkAcl']\
+                                           ['networkAclId']
+        self._arn.append(self._arn_templates['t2'].format(**self._arn_parts))
+
+
 class EC2CreateRouteTable(CreateEvent):
     def __init__(self, event: dict):
         super(EC2CreateRouteTable, self).__init__(event)

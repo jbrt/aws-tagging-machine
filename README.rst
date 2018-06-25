@@ -22,6 +22,7 @@ Current event supported:
 
 - (EC2) RunInstances
 - (EC2) CreateDhcpOptions
+- (EC2) CreateNetworkAcl
 - (EC2) CreateRouteTable
 - (EC2) CreateSnapshot
 - (EC2) CreateSubnet
