@@ -29,6 +29,10 @@ class TestEventParsing(unittest.TestCase):
         file_event = os.path.join(DIRECTORY, 'ec2_create_network_acl.json')
         self._get_event_data(file_event)
 
+    def test_create_network_interface(self):
+        file_event = os.path.join(DIRECTORY, 'ec2_create_network_interface.json')
+        self._get_event_data(file_event)
+
     def test_create_image(self):
         file_event = os.path.join(DIRECTORY, 'ec2_create_image.json')
         self._get_event_data(file_event)
@@ -87,6 +91,11 @@ class TestFactory(unittest.TestCase):
         file_event = os.path.join(DIRECTORY, 'ec2_create_network_acl.json')
         event_object = self._get_event_data(file_event)
         self.assertIsInstance(event_object, EC2CreateNetworkAcl)
+
+    def test_create_network_interface(self):
+        file_event = os.path.join(DIRECTORY, 'ec2_create_network_interface.json')
+        event_object = self._get_event_data(file_event)
+        self.assertIsInstance(event_object, EC2CreateNetworkInterface)
 
     def test_create_image(self):
         file_event = os.path.join(DIRECTORY, 'ec2_create_image.json')

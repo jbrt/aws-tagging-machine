@@ -17,6 +17,7 @@ class EventFactory(object):
 
         cls._events = {'CreateDhcpOptions': EC2CreateDhcpOptions,
                        'CreateNetworkAcl': EC2CreateNetworkAcl,
+                       'CreateNetworkInterface': EC2CreateNetworkInterface,
                        'CreateImage': EC2CreateImage,
                        'CreateInternetGateway': EC2CreateInternetGateway,
                        'CreateRouteTable': EC2CreateRouteTable,
