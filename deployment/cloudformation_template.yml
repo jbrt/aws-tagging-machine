@@ -48,8 +48,10 @@ Resources:
         detail:
           eventName:
             - RunInstances
+            - CreateImage
             - CreateDhcpOptions
             - CreateNetworkAcl
+            - CreateNetworkInterface
             - CreateRouteTable
             - CreateSecurityGroup
             - CreateSnapshot

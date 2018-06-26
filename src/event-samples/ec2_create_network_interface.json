@@ -1,0 +1,89 @@
+{
+    "version": "0",
+    "id": "2fc69dbc-27b1-fa1a-3e08-df86aa3408f7",
+    "detail-type": "AWS API Call via CloudTrail",
+    "source": "aws.ec2",
+    "account": "715544332222",
+    "time": "2018-06-26T11:47:27Z",
+    "region": "eu-west-1",
+    "resources": [],
+    "detail": {
+        "eventVersion": "1.05",
+        "userIdentity": {
+            "type": "IAMUser",
+            "principalId": "AIDAIMIPIFM25KTRLIQCU",
+            "arn": "arn:aws:iam::715544332222:user/jbrt",
+            "accountId": "715544332222",
+            "accessKeyId": "ASIAJ3VT2LYMRWNKS7PA",
+            "userName": "jbrt",
+            "sessionContext": {
+                "attributes": {
+                    "mfaAuthenticated": "true",
+                    "creationDate": "2018-06-26T06:05:05Z"
+                }
+            },
+            "invokedBy": "signin.amazonaws.com"
+        },
+        "eventTime": "2018-06-26T11:47:27Z",
+        "eventSource": "ec2.amazonaws.com",
+        "eventName": "CreateNetworkInterface",
+        "awsRegion": "eu-west-1",
+        "sourceIPAddress": "109.190.109.190",
+        "userAgent": "signin.amazonaws.com",
+        "requestParameters": {
+            "subnetId": "subnet-14813d5d",
+            "description": "PLOP",
+            "groupSet": {
+                "items": [
+                    {
+                        "groupId": "sg-ba76d9c2"
+                    }
+                ]
+            },
+            "privateIpAddressesSet": {}
+        },
+        "responseElements": {
+            "networkInterface": {
+                "networkInterfaceId": "eni-acdfaf98",
+                "internalInterfaceId": "interface-acdfaf98",
+                "subnetId": "subnet-14813d5d",
+                "vpcId": "vpc-822795e5",
+                "availabilityZone": "eu-west-1c",
+                "description": "PLOP",
+                "ownerId": "715544332222",
+                "requesterId": "AIDAIMIPIFM25KTRLIQCU",
+                "requesterManaged": false,
+                "status": "pending",
+                "macAddress": "06:23:bd:3a:7d:70",
+                "privateIpAddress": "10.0.0.192",
+                "privateDnsName": "ip-10-0-0-192.eu-west-1.compute.internal",
+                "sourceDestCheck": true,
+                "interfaceType": "interface",
+                "groupSet": {
+                    "items": [
+                        {
+                            "groupId": "sg-ba76d9c2",
+                            "groupName": "SG_CommandHost"
+                        }
+                    ]
+                },
+                "attachableToInstanceBySet": {},
+                "associableWithElasticIpBySet": {},
+                "privateIpAddressesSet": {
+                    "item": [
+                        {
+                            "privateIpAddress": "10.0.0.192",
+                            "privateDnsName": "ip-10-0-0-192.eu-west-1.compute.internal",
+                            "primary": true
+                        }
+                    ]
+                },
+                "ipv6AddressesSet": {},
+                "tagSet": {}
+            }
+        },
+        "requestID": "39815773-20fc-4630-a9ca-8ebe1b459773",
+        "eventID": "9e28c5eb-7c48-423f-8051-2661c131d7b3",
+        "eventType": "AwsApiCall"
+    }
+}

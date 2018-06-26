@@ -25,8 +25,10 @@ Here is an example of applied tags on a resource:
 Current event supported:
 
 - (EC2) RunInstances
+- (EC2) CreateImage
 - (EC2) CreateDhcpOptions
 - (EC2) CreateNetworkAcl
+- (EC2) CreateNetworkInterface
 - (EC2) CreateRouteTable
 - (EC2) CreateSecurityGroup
 - (EC2) CreateSnapshot
