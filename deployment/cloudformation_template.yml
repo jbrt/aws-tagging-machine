@@ -51,6 +51,7 @@ Resources:
             - CreateDhcpOptions
             - CreateNetworkAcl
             - CreateRouteTable
+            - CreateSecurityGroup
             - CreateSnapshot
             - CreateSubnet
             - CreateTable
