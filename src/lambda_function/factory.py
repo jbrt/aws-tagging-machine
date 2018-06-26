@@ -19,6 +19,7 @@ class EventFactory(object):
                        'CreateNetworkAcl': EC2CreateNetworkAcl,
                        'CreateInternetGateway': EC2CreateInternetGateway,
                        'CreateRouteTable': EC2CreateRouteTable,
+                       'CreateSecurityGroup': EC2CreateSecurityGroup,
                        'CreateSnapshot': EC2CreateSnapshot,
                        'CreateSubnet': EC2CreateSubnet,
                        'CreateTable': DynamoDBCreateTable,

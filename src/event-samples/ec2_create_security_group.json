@@ -1,0 +1,46 @@
+{
+    "version": "0",
+    "id": "f10f7933-d5c2-60c6-a540-c479c60705ab",
+    "detail-type": "AWS API Call via CloudTrail",
+    "source": "aws.ec2",
+    "account": "715544332222",
+    "time": "2018-06-26T06:08:17Z",
+    "region": "eu-west-1",
+    "resources": [],
+    "detail": {
+        "eventVersion": "1.05",
+        "userIdentity": {
+            "type": "IAMUser",
+            "principalId": "AIDAIMIPIFM25KTRLIQCU",
+            "arn": "arn:aws:iam::715544332222:user/jbrt",
+            "accountId": "715544332222",
+            "accessKeyId": "ASIAJ3VT2LYMRWNKS7PA",
+            "userName": "jbrt",
+            "sessionContext": {
+                "attributes": {
+                    "mfaAuthenticated": "true",
+                    "creationDate": "2018-06-26T06:05:05Z"
+                }
+            },
+            "invokedBy": "signin.amazonaws.com"
+        },
+        "eventTime": "2018-06-26T06:08:17Z",
+        "eventSource": "ec2.amazonaws.com",
+        "eventName": "CreateSecurityGroup",
+        "awsRegion": "eu-west-1",
+        "sourceIPAddress": "109.190.109.190",
+        "userAgent": "signin.amazonaws.com",
+        "requestParameters": {
+            "groupName": "TestTag",
+            "groupDescription": "Blabla",
+            "vpcId": "vpc-f9a8359e"
+        },
+        "responseElements": {
+            "_return": true,
+            "groupId": "sg-5655412b"
+        },
+        "requestID": "033b225c-4319-4f0f-a7c4-575488c70061",
+        "eventID": "60c259ef-35fc-4a55-a4e8-bfbf5ef842ac",
+        "eventType": "AwsApiCall"
+    }
+}

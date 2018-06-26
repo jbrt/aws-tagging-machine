@@ -58,6 +58,17 @@ class EC2CreateRouteTable(CreateEvent):
         self._arn.append(self._arn_templates['t2'].format(**self._arn_parts))
 
 
+class EC2CreateSecurityGroup(CreateEvent):
+    def __init__(self, event: dict):
+        super(EC2CreateSecurityGroup, self).__init__(event)
+        self._arn_parts['service'] = 'ec2'
+        self._arn_parts['resourcetype'] = 'security-group'
+        self._arn_parts['resource'] = event['detail']\
+                                           ['responseElements']\
+                                           ['groupId']
+        self._arn.append(self._arn_templates['t2'].format(**self._arn_parts))
+
+
 class EC2CreateSnapshot(CreateEvent):
     def __init__(self, event: dict):
         super(EC2CreateSnapshot, self).__init__(event)

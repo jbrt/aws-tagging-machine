@@ -28,6 +28,7 @@ Current event supported:
 - (EC2) CreateDhcpOptions
 - (EC2) CreateNetworkAcl
 - (EC2) CreateRouteTable
+- (EC2) CreateSecurityGroup
 - (EC2) CreateSnapshot
 - (EC2) CreateSubnet
 - (EC2) CreateVolume
