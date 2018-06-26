@@ -22,6 +22,15 @@ class EC2CreateDhcpOptions(CreateEvent):
         self._arn.append(self._arn_templates['t2'].format(**self._arn_parts))
 
 
+class EC2CreateImage(CreateEvent):
+    def __init__(self, event: dict):
+        super(EC2CreateImage, self).__init__(event)
+        self._arn_parts['service'] = 'ec2'
+        self._arn_parts['resourcetype'] = 'image'
+        self._arn_parts['resource'] = event['detail']['responseElements']['imageId']
+        self._arn.append(self._arn_templates['t2'].format(**self._arn_parts))
+
+
 class EC2CreateInternetGateway(CreateEvent):
     def __init__(self, event: dict):
         super(EC2CreateInternetGateway, self).__init__(event)

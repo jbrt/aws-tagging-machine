@@ -48,6 +48,7 @@ Resources:
         detail:
           eventName:
             - RunInstances
+            - CreateImage
             - CreateDhcpOptions
             - CreateNetworkAcl
             - CreateRouteTable

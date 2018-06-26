@@ -1,0 +1,58 @@
+{
+    "version": "0",
+    "id": "23ad628a-31d4-1ac6-d5e6-12995d45b231",
+    "detail-type": "AWS API Call via CloudTrail",
+    "source": "aws.ec2",
+    "account": "715544332222",
+    "time": "2018-06-26T11:15:24Z",
+    "region": "eu-west-1",
+    "resources": [],
+    "detail": {
+        "eventVersion": "1.05",
+        "userIdentity": {
+            "type": "IAMUser",
+            "principalId": "AIDAIMIPIFM25KTRLIQCU",
+            "arn": "arn:aws:iam::715544332222:user/jbrt",
+            "accountId": "715544332222",
+            "accessKeyId": "ASIAJ3VT2LYMRWNKS7PA",
+            "userName": "jbrt",
+            "sessionContext": {
+                "attributes": {
+                    "mfaAuthenticated": "true",
+                    "creationDate": "2018-06-26T06:05:05Z"
+                }
+            },
+            "invokedBy": "signin.amazonaws.com"
+        },
+        "eventTime": "2018-06-26T11:15:24Z",
+        "eventSource": "ec2.amazonaws.com",
+        "eventName": "CreateImage",
+        "awsRegion": "eu-west-1",
+        "sourceIPAddress": "109.190.109.190",
+        "userAgent": "signin.amazonaws.com",
+        "requestParameters": {
+            "instanceId": "i-0923fd6599810253c",
+            "name": "Plop",
+            "noReboot": false,
+            "blockDeviceMapping": {
+                "items": [
+                    {
+                        "deviceName": "/dev/xvda",
+                        "ebs": {
+                            "volumeSize": 8,
+                            "deleteOnTermination": false,
+                            "volumeType": "gp2",
+                            "encrypted": true
+                        }
+                    }
+                ]
+            }
+        },
+        "responseElements": {
+            "imageId": "ami-ad252c47"
+        },
+        "requestID": "0aff0274-6d07-4f45-9ed6-26f8fff4ba5f",
+        "eventID": "c944f9f7-1d8e-4359-a82b-68e73d6dd059",
+        "eventType": "AwsApiCall"
+    }
+}
