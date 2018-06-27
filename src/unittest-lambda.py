@@ -4,6 +4,7 @@ import unittest
 from lambda_function.factory import EventFactory
 from lambda_function.events_ec2 import *
 from lambda_function.events_dynamodb import *
+from lambda_function.events_s3 import *
 
 DIRECTORY = 'event-samples'
 
@@ -16,6 +17,10 @@ class TestEventParsing(unittest.TestCase):
             event_object = EventFactory(json_data)
             self.assertTrue(event_object.tags)
             self.assertTrue(event_object.arn)
+
+    def test_create_bucket(self):
+        file_event = os.path.join(DIRECTORY, 's3_create_bucket.json')
+        self._get_event_data(file_event)
 
     def test_create_table(self):
         file_event = os.path.join(DIRECTORY, 'dynamodb_create_table.json')
@@ -76,6 +81,11 @@ class TestFactory(unittest.TestCase):
         with open(event_file, 'r') as file_handler:
             json_data = json.load(file_handler)
             return EventFactory(json_data)
+
+    def test_create_bucket(self):
+        file_event = os.path.join(DIRECTORY, 's3_create_bucket.json')
+        event_object = self._get_event_data(file_event)
+        self.assertIsInstance(event_object, S3CreateBucket)
 
     def test_create_table(self):
         file_event = os.path.join(DIRECTORY, 'dynamodb_create_table.json')

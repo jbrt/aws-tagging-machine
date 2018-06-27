@@ -37,6 +37,7 @@ Current event supported:
 - (EC2) CreateVpc
 - (EC2) CreateInternetGateway
 - (DynamoDB) CreateTable
+- (S3) CreateBucket
 
 Much more events will be added, see TODO section for more information.
 Work in progress.
@@ -59,7 +60,7 @@ whole source code of this project.
 Before create a new CloudFormation stack with that template, you have to:
 
 1. Upload the zip file to a S3 bucket
-2. Edit the CloudFormation template and replace the bucket name in line 37 with your bucket's name
+2. Edit the CloudFormation template and replace the bucket name in line 44 with your bucket's name
 3. Then, create a new CloudFormation Stack with the template
 
 TODO

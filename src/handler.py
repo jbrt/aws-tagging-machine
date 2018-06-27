@@ -32,6 +32,6 @@ def auto_tagging(event, context):
         print(error)
 
     else:
-        print(f'Successfully tag the resource: {event_handler}')
+        print(f'Successfully tag the resource: {event_handler.arn}')
         print(f'Tags applied: {event_handler.tags}')
         return response

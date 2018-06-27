@@ -8,6 +8,7 @@ of event objects.
 from lambda_function.base import EventError
 from lambda_function.events_ec2 import *
 from lambda_function.events_dynamodb import *
+from lambda_function.events_s3 import *
 
 
 class EventFactory(object):
@@ -15,7 +16,8 @@ class EventFactory(object):
 
     def __new__(cls, event: dict):
 
-        cls._events = {'CreateDhcpOptions': EC2CreateDhcpOptions,
+        cls._events = {'CreateBucket': S3CreateBucket,
+                       'CreateDhcpOptions': EC2CreateDhcpOptions,
                        'CreateNetworkAcl': EC2CreateNetworkAcl,
                        'CreateNetworkInterface': EC2CreateNetworkInterface,
                        'CreateImage': EC2CreateImage,

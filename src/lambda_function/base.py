@@ -35,7 +35,9 @@ class BaseEvent(object, metaclass=abc.ABCMeta):
             't1': 'arn:{partition}:{service}:{region}:{account}:{resource}',
             't2': 'arn:{partition}:{service}:{region}:{account}:{resourcetype}/{resource}',
             't3': 'arn:{partition}:{service}:{region}:{account}:{resourcetype}:{resource}',
-            't4': 'arn:{partition}:{service}:{region}::{resourcetype}/{resource}'
+            't4': 'arn:{partition}:{service}:{region}::{resourcetype}/{resource}',
+            't5': 'arn:{partition}:{service}:::{resource}',
+            't6': 'arn:{partition}:{service}:::{resourcetype}/{resource}'
         }
 
         # Will be initialized with the child-classes
