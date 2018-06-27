@@ -28,6 +28,11 @@ Resources:
               - Action: dynamodb:TagResource
                 Effect: Allow
                 Resource: '*'
+              - Action:
+                  - s3:PutBucketTagging
+                  - s3:GetBucketTagging
+                Effect: Allow
+                Resource: '*'
             Version: '2012-10-17'
           PolicyName: AllowTaggingAndLogging
     Type: AWS::IAM::Role
@@ -48,6 +53,7 @@ Resources:
         detail:
           eventName:
             - RunInstances
+            - CreateBucket
             - CreateImage
             - CreateDhcpOptions
             - CreateNetworkAcl
@@ -63,11 +69,13 @@ Resources:
           eventSource:
             - ec2.amazonaws.com
             - dynamodb.amazonaws.com
+            - s3.amazonaws.com
         detail-type:
           - AWS API Call via CloudTrail
         source:
           - aws.ec2
           - aws.dynamodb
+          - aws.s3
       State: ENABLED
       Targets:
         - Arn: !GetAtt 'AutoTaggingMachineFunction.Arn'
