@@ -38,6 +38,7 @@ Current event supported:
 - (EC2) CreateInternetGateway
 - (DynamoDB) CreateTable
 - (S3) CreateBucket
+- (SQS) CreateQueue
 
 Much more events will be added, see TODO section for more information.
 Work in progress.

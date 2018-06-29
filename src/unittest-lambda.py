@@ -5,6 +5,7 @@ from lambda_function.factory import EventFactory
 from lambda_function.events_ec2 import *
 from lambda_function.events_dynamodb import *
 from lambda_function.events_s3 import *
+from lambda_function.events_sqs import *
 
 DIRECTORY = 'event-samples'
 
@@ -44,6 +45,10 @@ class TestEventParsing(unittest.TestCase):
 
     def test_create_internet_gateway(self):
         file_event = os.path.join(DIRECTORY, 'ec2_create_internet_gateway.json')
+        self._get_event_data(file_event)
+
+    def test_create_queue(self):
+        file_event = os.path.join(DIRECTORY, 'sqs_create_queue.json')
         self._get_event_data(file_event)
 
     def test_create_security_group(self):
@@ -116,6 +121,11 @@ class TestFactory(unittest.TestCase):
         file_event = os.path.join(DIRECTORY, 'ec2_create_internet_gateway.json')
         event_object = self._get_event_data(file_event)
         self.assertIsInstance(event_object, EC2CreateInternetGateway)
+
+    def test_create_queue(self):
+        file_event = os.path.join(DIRECTORY, 'sqs_create_queue.json')
+        event_object = self._get_event_data(file_event)
+        self.assertIsInstance(event_object, SQSCreateQueue)
 
     def test_create_security_group(self):
         file_event = os.path.join(DIRECTORY, 'ec2_create_security_group.json')
