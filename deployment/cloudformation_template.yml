@@ -33,6 +33,9 @@ Resources:
                   - s3:GetBucketTagging
                 Effect: Allow
                 Resource: '*'
+              - Action: sqs:TagQueue
+                Effect: Allow
+                Resource: '*'
             Version: '2012-10-17'
           PolicyName: AllowTaggingAndLogging
     Type: AWS::IAM::Role
@@ -58,6 +61,7 @@ Resources:
             - CreateDhcpOptions
             - CreateNetworkAcl
             - CreateNetworkInterface
+            - CreateQueue
             - CreateRouteTable
             - CreateSecurityGroup
             - CreateSnapshot
@@ -70,12 +74,14 @@ Resources:
             - ec2.amazonaws.com
             - dynamodb.amazonaws.com
             - s3.amazonaws.com
+            - sqs.amazonaws.com
         detail-type:
           - AWS API Call via CloudTrail
         source:
           - aws.ec2
           - aws.dynamodb
           - aws.s3
+          - aws.sqs
       State: ENABLED
       Targets:
         - Arn: !GetAtt 'AutoTaggingMachineFunction.Arn'

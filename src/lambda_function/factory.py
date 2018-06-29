@@ -9,6 +9,7 @@ from lambda_function.base import EventError
 from lambda_function.events_ec2 import *
 from lambda_function.events_dynamodb import *
 from lambda_function.events_s3 import *
+from lambda_function.events_sqs import *
 
 
 class EventFactory(object):
@@ -22,6 +23,7 @@ class EventFactory(object):
                        'CreateNetworkInterface': EC2CreateNetworkInterface,
                        'CreateImage': EC2CreateImage,
                        'CreateInternetGateway': EC2CreateInternetGateway,
+                       'CreateQueue': SQSCreateQueue,
                        'CreateRouteTable': EC2CreateRouteTable,
                        'CreateSecurityGroup': EC2CreateSecurityGroup,
                        'CreateSnapshot': EC2CreateSnapshot,

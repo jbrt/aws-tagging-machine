@@ -1,0 +1,43 @@
+{
+  "version": "0",
+  "id": "5b8d030c-00ad-533c-d9e5-809d7c81ef0b",
+  "detail-type": "AWS API Call via CloudTrail",
+  "source": "aws.sqs",
+  "account": "715544332222",
+  "time": "2018-06-29T05:32:55Z",
+  "region": "eu-west-1",
+  "resources": [],
+  "detail": {
+    "eventVersion": "1.04",
+    "userIdentity": {
+      "type": "IAMUser",
+      "principalId": "AIDAIMIPIFM25KTRLIQCU",
+      "arn": "arn:aws:iam::715544332222:user/jbrt",
+      "accountId": "715544332222",
+      "accessKeyId": "ASIAJCKKTXZ42PDZTMMQ",
+      "userName": "jbrt",
+      "sessionContext": {
+        "attributes": {
+          "mfaAuthenticated": "true",
+          "creationDate": "2018-06-29T05:12:25Z"
+        }
+      },
+      "invokedBy": "signin.amazonaws.com"
+    },
+    "eventTime": "2018-06-29T05:32:55Z",
+    "eventSource": "sqs.amazonaws.com",
+    "eventName": "CreateQueue",
+    "awsRegion": "eu-west-1",
+    "sourceIPAddress": "109.190.109.190",
+    "userAgent": "signin.amazonaws.com",
+    "requestParameters": {
+      "queueName": "tag_queue"
+    },
+    "responseElements": {
+      "queueUrl": "https://sqs.eu-west-1.amazonaws.com/715544332222/tag_queue"
+    },
+    "requestID": "c7ee3bc4-5eb6-5b9d-a5df-686b987179e9",
+    "eventID": "1341f53c-e927-41eb-9815-b415abedbcb7",
+    "eventType": "AwsApiCall"
+  }
+}
