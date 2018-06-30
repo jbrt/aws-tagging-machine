@@ -46,7 +46,7 @@ Work in progress.
 Prerequisites
 -------------
 
-Obviously, **CloudTrail must be activated.**
+**Obviously, CloudTrail must be activated.**
 
 Deployment
 ----------
@@ -61,8 +61,8 @@ whole source code of this project.
 Before create a new CloudFormation stack with that template, you have to:
 
 1. Upload the zip file to a S3 bucket
-2. Edit the CloudFormation template and replace the bucket name in line 44 with your bucket's name
-3. Then, create a new CloudFormation Stack with the template
+2. Edit the CloudFormation template and replace the bucket name with your bucket's name
+3. Then, create a new CloudFormation Stack with the template on the desired AWS region
 
 TODO
 ----
