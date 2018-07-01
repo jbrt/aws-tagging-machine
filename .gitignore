@@ -103,9 +103,14 @@ venv.bak/
 # mypy
 .mypy_cache/
 
-# PyCharm
+# PyCharm & VSCode
 .idea/
+.vscode/
 
 # Draft and tests
 incoming/*
 *test.*
+
+# Exclude Terraform files
+*.tfstate*
+.terraform/
