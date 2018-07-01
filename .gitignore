@@ -110,3 +110,7 @@ venv.bak/
 # Draft and tests
 incoming/*
 *test.*
+
+# Exclude Terraform files
+*.tfstate*
+.terraform/
