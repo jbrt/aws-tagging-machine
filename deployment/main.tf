@@ -7,8 +7,11 @@ provider "aws" {
 # Declare the AWS Lambda function
 resource "aws_lambda_function" "AutoTaggingMachineFunction" {
   function_name    = "AutoTaggingMachineFunction"
+  description      = "This function will applied tags on new AWS resources"
   handler          = "handler.auto_tagging"
   runtime          = "python3.6"
+  memory_size      = 128
+  timeout          = 60
   role             = "${aws_iam_role.AutoTaggingMachine.arn}"
   filename         = "code.zip"
   source_code_hash = "${base64sha256(file("code.zip"))}"
@@ -16,7 +19,8 @@ resource "aws_lambda_function" "AutoTaggingMachineFunction" {
 
 # Create a new IAM Role for this function
 resource "aws_iam_role" "AutoTaggingMachine" {
-  name = "AutoTaggingMachine"
+  name        = "AutoTaggingMachine"
+  description = "Role used by the Auto Tagging Machine to apply tags"
 
   assume_role_policy = <<EOF
 {
@@ -37,7 +41,7 @@ EOF
 # Define the policies that will be used for that role
 resource "aws_iam_policy" "AllowTaggingAndLogging" {
   name        = "AllowTaggingAndLogging"
-  description = "Policy used for the Lambda function Auto Tagging Machine"
+  description = "Policy used for the Lambda function AutoTaggingMachine"
 
   policy = <<EOF
 {
@@ -78,7 +82,7 @@ resource "aws_iam_role_policy_attachment" "test-attach" {
 # Declare a CloudWatch Event rule
 resource "aws_cloudwatch_event_rule" "AutoTaggingMachineRule" {
   name        = "AutoTaggingMachineRule"
-  description = "Send events"
+  description = "Send events to AutoTaggingMachine Lambda function"
 
   event_pattern = <<PATTERN
 {
