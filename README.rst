@@ -46,7 +46,7 @@ Work in progress.
 Prerequisites
 -------------
 
-Obviously, **CloudTrail must be activated.**
+**Obviously, CloudTrail must be activated.**
 
 Deployment
 ----------
@@ -61,8 +61,25 @@ whole source code of this project.
 Before create a new CloudFormation stack with that template, you have to:
 
 1. Upload the zip file to a S3 bucket
-2. Edit the CloudFormation template and replace the bucket name in line 44 with your bucket's name
-3. Then, create a new CloudFormation Stack with the template
+2. Edit the CloudFormation template and replace the bucket name with your bucket's name
+3. Then, create a new CloudFormation Stack with the template on the desired AWS region
+
+If you want to delete this solution just destroy the CloudFormation stack.
+
+Deployment with Terraform
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+You can also use Terraform to deploy this solution. You can find the main.tf 
+file in the deployment directory. Here is the installation steps: 
+
+1. Go in the deployment directory
+2. Edit the main.tf file and replace the AWS region if you need to (default is eu-west-1)
+3. Set environment variables AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY with your creditials
+4. If it's the first time you use Terraform, do an ``terraform init`` before go further
+5. do an ``terraform plan`` to preview the changes
+6. do an ``terraform apply`` to create the resources
+
+If you want to delete this solution just do a ``terraform destroy``.
 
 TODO
 ----
@@ -70,7 +87,7 @@ TODO
 The development is still ongoing. The next releases will add:
 
 - support of more events and AWS services
-- other deployment methods (Ansible and Terraform probably)
+- other deployment methods (Ansible probably)
 - another stuff, who knows :-)
 
 Pull requests are welcome.
