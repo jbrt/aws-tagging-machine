@@ -1,7 +1,12 @@
 # Define the AWS region
 # By default, eu-west-1 but you can/must update this value
 provider "aws" {
-  region = "eu-west-1"
+  region = "${var.aws_region}"
+}
+
+variable "aws_region" {
+  description = "The AWS region to create the resources"
+  default     = "eu-west-1"
 }
 
 # Declare the AWS Lambda function
