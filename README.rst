@@ -73,11 +73,10 @@ You can also use Terraform to deploy this solution. You can find the main.tf
 file in the deployment directory. Here is the installation steps: 
 
 1. Go in the deployment directory
-2. Edit the main.tf file and replace the AWS region if you need to (default is eu-west-1)
-3. Set environment variables AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY with your creditials
-4. If it's the first time you use Terraform, do an ``terraform init`` before go further
-5. do an ``terraform plan`` to preview the changes
-6. do an ``terraform apply`` to create the resources
+2. Set environment variables AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY with your creditials
+3. If it's the first time you use Terraform, do an ``terraform init`` before go further
+4. do an ``terraform plan -var aws_region=YOUR_REGION`` to preview the changes (the default region is eu-west-1)
+5. do an ``terraform apply -var aws_region=YOUR_REGION`` to create the resources
 
 If you want to delete this solution just do a ``terraform destroy``.
 
