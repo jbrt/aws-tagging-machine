@@ -69,11 +69,10 @@ If you want to delete this solution just destroy the CloudFormation stack.
 Deployment with Terraform
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-You can also use Terraform to deploy this solution. You can find the main.tf 
-file in the deployment directory. Here is the installation steps: 
+You can also use Terraform to deploy this solution:
 
-1. Go in the deployment directory
-2. Set environment variables AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY with your creditials
+1. Go in the deployment/terraform directory
+2. Set environment variables AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY with your credentials
 3. If it's the first time you use Terraform, do an ``terraform init`` before go further
 4. do an ``terraform plan -var aws_region=YOUR_REGION`` to preview the changes (the default region is eu-west-1)
 5. do an ``terraform apply -var aws_region=YOUR_REGION`` to create the resources
