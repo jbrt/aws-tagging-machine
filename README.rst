@@ -58,12 +58,6 @@ To deploy this solution you can use the CloudFormation template present in the
 "deployment" directory. This directory also contains a ZIP file containing the
 whole source code of this project.
 
-Before create a new CloudFormation stack with that template, you have to:
-
-1. Upload the zip file to a S3 bucket
-2. Edit the CloudFormation template and replace the bucket name with your bucket's name
-3. Then, create a new CloudFormation Stack with the template on the desired AWS region
-
 If you want to delete this solution just destroy the CloudFormation stack.
 
 Deployment with Terraform
